@@ -1,0 +1,22 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+}
+
+// Вариант 1 подключения репозитория
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.pkg.github.com/intrtl/irlib'
+
+            // Данные пользователя для доступа к репозиторию
+            credentials {
+                username 'Personal-GitHub-username'
+                password 'Personal-GitHub-access-token'
+            }
+        }
+    }
+}
